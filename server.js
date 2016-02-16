@@ -18,97 +18,62 @@ app.use(bodyParser.json());
 
 // // Routes
 
+//GET TODOS
 app.get('/todo', function (req, res) {
 
     Todo.find(function (err, todo) {
 
         if(err) {
-            res.send(err)
+          return  res.send(err)
         }
-        res.json(todo);
+
+        return res.json(todo);
     });
-  });
+});
 
-  var myTodo = new Todo({ text: 'wash the car' });
-    myTodo.save(function (err) {
-      if (err) {
-        console.log(err)
-      }
-      else {
-        console.log('meow');
-      }
+//POST TODOS
+app.post('/todo', function(req, res) {
+
+    Todo.create({
+
+      text: req.body.text
+
+    }, function(err, todo) {
+
+        if(err) {
+          return res.send(err);
+        }
     });
-    app.get('/', function (req, res) {
-      res.send('This is an API!');
+});
+
+//DELETE TODOS
+app.delete('/api/todo/:todo_id', function(req, res) {
+
+    Todo.remove({
+
+        _id: req.params.todo_id
+
+    }, function(err, todo) {
+
+        if(err) {
+          return res.send(err)
+        }
     });
+});
+
+app.put('/todo', function (req, res) {
+  res.send('PUT Todo');
+});
+
+app.delete('/todo', function (req, res) {
+  res.send('DELETE todo');
+});
 
 
-    // And this will return our todo from DB.
-
-
-    app.post('/todo', function (req, res) {
-      res.send('POST Todo');
-    });
-
-    app.put('/todo', function (req, res) {
-      res.send('PUT Todo');
-    });
-
-    app.delete('/todo', function (req, res) {
-      res.send('DELETE todo');
-    });
-
-
-// app.post('/todo', function(req, res) {
-//
-//     Todo.create({
-//
-//       text: 'req.body.text'
-//
-//     }, function(err, todo) {
-//         if(err) {
-//           res.send(err);
-//         }
-//         Todo.find(function(err, todo) {
-//           if(err) {
-//             res.send(err)
-//           }
-//           res.json(todo);
-//         });
-//     });
-// });
-//
-// app.delete('/api/todo/:todo_id', function(req, res) {
-//
-//     Todo.remove({
-//         _id: req.params.todo_id
-//     }, function(err, todo) {
-//         if(err) {
-//           res.send(err)
-//         }
-//
-//       Todo.find(function(err, todo) {
-//             if(err) {
-//               res.send(err)
-//             }
-//             res.json(todo);
-//           });
-//       });
-// });
 
 app.listen(3000);
 console.log('API is running on port 3000')
 
-
-
-
 // app.use('/api', require('./routes/api'));
 
 // var test = require('./routes/api');
-
-// Start Server
-
-// That will save a todo, each time we start the app
-
-//
-//
