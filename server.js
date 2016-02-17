@@ -47,7 +47,7 @@ app.post('/todo', function(req, res) {
 });
 
 //DELETE TODOS
-app.delete('/api/todo/:todo_id', function(req, res) {
+app.delete('/todo/:todo_id', function(req, res) {
 
     Todo.remove({
 
@@ -65,14 +65,8 @@ app.put('/todo', function (req, res) {
   res.send('PUT Todo');
 });
 
-app.delete('/todo', function (req, res) {
-  res.send('DELETE todo');
-});
-
-
-
 app.listen(3000);
-console.log('API is running on port 3000')
+console.log('API is running on port 3000');
 
 // app.use('/api', require('./routes/api'));
 
