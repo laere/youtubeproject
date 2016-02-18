@@ -30,7 +30,7 @@ todosRouter.route('/todo')
   .get(function(req, res) {
     Todo.find(function(err, todo) {
         if(err) {
-          return res.send(err)
+          return res.send(err);
         }
       return res.json(todo);
     });
@@ -61,7 +61,7 @@ todosRouter.route('/todo/:todo_id')
       Todo.findById(req.params.todo_id, function (err, todo) {
 
           if(err) {
-            return  res.send(err)
+            return  res.send(err);
           }
 
           return res.json(todo);
@@ -77,7 +77,7 @@ todosRouter.route('/todo/:todo_id')
       }, function(err, todo) {
 
           if(err) {
-            return res.send(err)
+            return res.send(err);
           }
       });
   });
