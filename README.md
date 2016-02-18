@@ -2,7 +2,7 @@ An API using Node Express and MongoDB. Also uses Morgan for request/response log
 
 <h1>Starting the server</h1>
 
-run     node server.js     and go to http://localhost:3000/todo
+run node server.js  and go to http://localhost:3000/todo
 
 I recommend using Postman for API testing, and using a mongoDB GUI called mongo-express, for manually handling the DB data.
 
