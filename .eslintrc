@@ -1,0 +1,15 @@
+{
+  "env" : {
+      "node" : true
+    },
+  "ecmaFeatures" : {
+      "arrowFunctions" : true,
+      "blockBindings" : true,
+      "jsx" : true,
+      "modules" : true,
+      "classes" : true
+    },
+    "rules": {
+        "semi": [2, "always"]
+    }
+}
