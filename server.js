@@ -22,73 +22,67 @@ app.use(cors());
 //Logging
 app.use(morgan('combined'));
 
-//var todosRouter = express.Router();
-
-
-
 // // Routes
-
+var todosRouter = express.Router();
 //GET TODOS
-app.get('/todo/:todo_id', function(req, res) {
+todosRouter.route('/todo')
 
-    Todo.findById(req.params.todo_id, function (err, todo) {
-
-        if(err) {
-          return  res.send(err)
-        }
-
-        return res.json(todo);
-    });
-});
-
-app.get('/todo', function(req, res) {
-  Todo.find(function(err, todo) {
-      if(err) {
-        return res.send(err)
-      }
-    return res.json(todo);
-  });
-});
-
-//POST TODOS
-app.post('/todo', function(req, res) {
-  console.log('This is the post ' + JSON.stringify(req.body));
-    Todo.create({
-
-      text: req.body.text
-
-    }, function(err, todo) {
-
-        if(err) {
-          return res.send(err);
-        }
-      return res.json(todo);
-    });
-});
-
-//DELETE TODOS
-app.delete('/todo/:todo_id', function(req, res) {
-  console.log(JSON.stringify(req.params.todo_id));
-    Todo.remove({
-
-        _id: req.params.todo_id
-
-    }, function(err, todo) {
-
+  .get(function(req, res) {
+    Todo.find(function(err, todo) {
         if(err) {
           return res.send(err)
         }
+      return res.json(todo);
     });
-});
+  })
+
+  //POST TODOS
+  .post(function(req, res) {
+    console.log('This is the post ' + JSON.stringify(req.body));
+      Todo.create({
+
+        text: req.body.text
+
+      }, function(err, todo) {
+
+          if(err) {
+            return res.send(err);
+          }
+        return res.json(todo);
+      });
+  });
 
 
-app.put('/todo', function (req, res) {
-  res.send('PUT Todo');
-});
+//GET TODOS BY ID
+todosRouter.route('/todo/:todo_id')
+
+  .get(function(req, res) {
+
+      Todo.findById(req.params.todo_id, function (err, todo) {
+
+          if(err) {
+            return  res.send(err)
+          }
+
+          return res.json(todo);
+      });
+  })
+  //DELETE TODOS
+  .delete(function(req, res) {
+    console.log(JSON.stringify(req.params.todo_id));
+      Todo.remove({
+
+          _id: req.params.todo_id
+
+      }, function(err, todo) {
+
+          if(err) {
+            return res.send(err)
+          }
+      });
+  });
+
+app.use('/', todosRouter);
 
 app.listen(3000);
 console.log('API is running on port 3000');
-
-// app.use('/api', require('./routes/api'));
-
-// var test = require('./routes/api');
