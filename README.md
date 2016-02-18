@@ -12,6 +12,12 @@ To download mongo-express
 
     npm install --save mongo-express
 
-copy the config.default file within the mongo-express folder, create a new file called config.js, paste the contents, and change the admin/pass.
+copy the config.default file within the mongo-express folder, create a new file called config.js (within the same folder), paste the contents, and change the admin/pass.
 
-To access the mongoDB GUI YOUR_PATH\node_modules\mongo-express && node app.js and it will be running on localhost:8081.
+<h2>To access the mongoDB GUI:</h2> 
+
+    YOUR_PATH\node_modules\mongo-express && node app.js 
+    
+It will be running on http://localhost:8081
+
+Cheers :)
