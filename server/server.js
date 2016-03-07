@@ -42,7 +42,8 @@ app.use(cors());
 //Logging
 app.use(morgan('combined'));
 
-// // Routes
+// Routes
+
 var todosRouter = express.Router();
 //GET TODOS
 todosRouter.route('/todo')
