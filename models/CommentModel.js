@@ -10,6 +10,9 @@ var CommentModel = new Schema({
   },
   comment: {
     type: String
+  },
+  date_created: {
+    type: Number
   }
 });
 

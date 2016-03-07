@@ -5,13 +5,33 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 var morgan = require('morgan');
 
-// Define our Todo Model
-var Todo = mongoose.model('Todo', {
-  text: String
+// DEFINE MODELS
+
+var BlogPost = mongoose.model('BlogPost', {
+  id: Number,
+  user_id: Number,
+  title: String,
+  image: String,
+  post: String,
+  date_created: Number
+});
+
+var Comment = mongoose.model('Comment', {
+  id: Number,
+  user_id: Number,
+  comment: String,
+  date_created: Number
+});
+
+var User = mongoose.model('User', {
+  id: Number,
+  email: String,
+  name: String,
+  password: String
 });
 
 // Mongo DB
-mongoose.connect('mongodb://localhost/todo');
+mongoose.connect('mongodb://localhost/blog');
 
 // Express
 var app = express();

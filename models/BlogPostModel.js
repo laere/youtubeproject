@@ -11,7 +11,13 @@ var BlogPostModel = new Schema({
   title: {
     type: String
   },
-  date: {
+  image: {
+    type: String
+  },
+  post: {
+    type: String
+  },
+  date_created: {
     type: Number
   }
 });
