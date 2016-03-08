@@ -14,11 +14,12 @@ $(document).ready(function() {
     $('div.mainContent').hide()
     //show movie based on href attribute (which is an id of the title of the movie)
     $(this.getAttribute('href')).show();
-	$('iframe').each(function(){
-		$(this)[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
-		console.log($(this)[0]);
-	});
-  });
 
+    
+  	$('iframe').each(function(){
+  		$(this)[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+  		console.log($(this)[0]);
+  	});
+  });
 
 });
