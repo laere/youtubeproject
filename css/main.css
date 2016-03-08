@@ -110,6 +110,7 @@ MAIN CONTENT
 .videoDescription {
   font-size: 1.9rem;
   font-weight: 300;
+  text-align: justify;
 }
 
 iframe {
