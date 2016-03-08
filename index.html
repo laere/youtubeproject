@@ -123,9 +123,20 @@
         <!-- MAIN CONTENT END -->
 
     </div>
+    <script type="text/javascript">
+        function downloadJSAtOnload() {
+            var element = document.createElement("script");
+            element.src = "js/jquery-2.2.1.min.js";
+            document.body.appendChild(element);
+        }
+            if (window.addEventListener)
+                window.addEventListener("load", downloadJSAtOnload, false);
+            else if (window.attachEvent)
+                window.attachEvent("onload", downloadJSAtOnload);
+            else window.onload = downloadJSAtOnload;
+    </script>
 
-
-    <script async src="js/jquery-2.2.1.min.js"></script>
+    <!-- <script async src="js/jquery-2.2.1.min.js"></script> -->
     <script async src="js/main.js"></script>
     </body>
 </html>
