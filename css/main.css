@@ -31,6 +31,15 @@ ul {
   margin: 0;
 }
 
+@keyframes grow {
+  50% {
+    transform: scale(.025);
+  }
+  100% {
+    transform: scale(.05);
+  }
+}
+
 
 /*************************************************
 CONTAINER
@@ -66,13 +75,16 @@ NAVBAR
 
 .navbar a:hover {
   color: #24B67F;
+  animation: grow 0.25s ease-out;
+  animation-fill-mode: forwards;
 }
 
 .selected {
   color: #24B67F;
   font-weight: 800;
-  font-size: 2.85;
+  font-size: 2.85rem;
 }
+
 
 /*************************************************
 MAIN CONTENT
