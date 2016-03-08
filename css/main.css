@@ -1,0 +1,124 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,900,700,300);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700,500);
+
+/*************************************************
+BASE STYLES
+*************************************************/
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.5;
+  font-family: 'Roboto', sans-serif;
+  background-color: #222;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+a {
+  color: #222;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+/*************************************************
+CONTAINER
+*************************************************/
+
+.container {
+  max-width: 940px;
+  height: 100vh;
+  background-color: white;
+  margin: 0 auto;
+  padding: 32px;
+  border-left: 2px solid #111;
+  border-right: 2px solid #111;
+}
+
+/*************************************************
+NAVBAR
+*************************************************/
+
+.navbar {
+  padding: 24px;
+  text-align: center;
+  border-bottom: 1px solid #999;
+  margin-bottom: 64px;
+
+}
+
+.navbar li {
+  display: inline-block;
+  padding: 0 24px;
+  font-size: 1.75rem;
+  text-align: center;
+  font-family: 'Ubuntu', 'Roboto', sans-serif;
+}
+
+.navbar a:hover {
+  color: #24B67F;
+}
+
+.selected {
+  color: #24B67F;
+  font-weight: 800;
+  font-size: 2.85;
+}
+
+/*************************************************
+MAIN CONTENT
+*************************************************/
+
+.mainContent {
+  text-align: center;
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.title {
+  font-size: 4rem;
+  margin-bottom: 40px;
+}
+
+.playerWrapper {
+  margin-bottom: 56px;
+}
+
+.videoDescription {
+  font-size: 1.9rem;
+  font-weight: 300;
+}
+
+
+/*************************************************
+MEDIA QUERIES
+*************************************************/
+
+@media (max-width: 696px) {
+  .navbar {
+    padding: 0px;
+  }
+  .navbar li {
+    display: block;
+    margin-bottom: 16px;
+  }
+}
