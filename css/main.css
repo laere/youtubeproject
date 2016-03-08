@@ -100,11 +100,24 @@ MAIN CONTENT
 
 .playerWrapper {
   margin-bottom: 56px;
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 35px;
+  height: 0;
+  overflow: hidden;
 }
 
 .videoDescription {
   font-size: 1.9rem;
   font-weight: 300;
+}
+
+iframe {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 
