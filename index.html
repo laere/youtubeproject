@@ -6,20 +6,8 @@
     <title>Awesome Movies</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/normalize.min.css">
-    <script>
-    var cb = function() {
+    <link rel="stylesheet" href="css/main.css" defer>
 
-        var l = document.createElement('link');
-        l.rel = 'stylesheet';
-        l.href = 'css/main.css';
-
-        var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
-    };
-    var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-              webkitRequestAnimationFrame || msRequestAnimationFrame;
-    if (raf) raf(cb);
-    else window.addEventListener('load', cb);
-    </script>
 </head>
 
 <body>
@@ -137,7 +125,7 @@
 
 </div>
 <!-- CONTAINER END -->
-<script src="js/jquery-2.2.1.min.js" defer></script>
+<script src="js/jquery-2.2.1.min.js"></script>
 <script src="js/main.js" defer></script>
 </body>
 </html>
