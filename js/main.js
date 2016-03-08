@@ -13,21 +13,21 @@ $(document).ready(function() {
     // add class to target clicked
     $(this).addClass('selected');
     //show movie based on href attribute (which is an id of the title of the movie)
-    $(this.getAttribute('href')).show();
+    $(this.getAttribute('href')).fadeIn(500);
 
     stopVideoOnSwitch();
 
   });
 
   function stopVideoOnSwitch() {
-
+    //for each iframe element
     $('iframe').each(function() {
+      //use the post message api to message the youtube api and retrieve the stopVideo func.
   		$(this)[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
   		console.log($(this)[0]);
   	});
-    
-  }
 
+  }
 
 
 });
