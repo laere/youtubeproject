@@ -1,5 +1,5 @@
 
-window.onload = function() {
+$(document).ready(function() {
 
   var $title = $('a');
 
@@ -17,4 +17,4 @@ window.onload = function() {
 
   });
 
-}
+});
