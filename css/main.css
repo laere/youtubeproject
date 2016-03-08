@@ -43,7 +43,7 @@ CONTAINER
 
 .container {
   max-width: 940px;
-  height: 100vh;
+  height: auto;
   background-color: white;
   margin: 0 auto;
   padding: 32px;
