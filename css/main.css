@@ -124,13 +124,24 @@ iframe {
 /*************************************************
 MEDIA QUERIES
 *************************************************/
+@media (max-width: 420px) {
+  .title {
+    font-size: 2.2rem;
+  }
+  .videoDescription {
+    font-size: 1.75rem;
+  }
+}
 
-@media (max-width: 696px) {
+@media (max-width: 896px) {
   .navbar {
     padding: 0px;
   }
   .navbar li {
     display: block;
     margin-bottom: 16px;
+  }
+  .title {
+    font-size: 2.5rem;
   }
 }
