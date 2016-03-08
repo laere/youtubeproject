@@ -16,6 +16,8 @@ $(document).ready(function() {
     $(this.getAttribute('href')).show();
 
   });
-
+  
+  var myPlayer = document.getElementById('#player');
+  myPlayer.stopVideo();
 
 });
