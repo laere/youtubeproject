@@ -4,16 +4,6 @@ $(document).ready(function() {
   var $title = $('a');
   var $iframe =$('iframe');
 
-  $('button').click(function(){
-    // Play video and go fullscreen
-    console.log('hi');
-    var playerElement = $('.playerWrapper');
-    var requestFullScreen = playerElement.requestFullScreen || playerElement.mozRequestFullScreen || playerElement.webkitRequestFullScreen;
-    if (requestFullScreen) {
-      requestFullScreen.bind(playerElement)();
-    }
-  });
-
   $title.click(function() {
     //hide all content other than one with visible class
     $('div.mainContent').hide();
