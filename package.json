@@ -15,5 +15,8 @@
     "mongoose": "^4.4.3",
     "morgan": "^1.6.1",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "webpack": "^1.12.14"
   }
 }
