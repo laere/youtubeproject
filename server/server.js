@@ -5,8 +5,12 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 var morgan = require('morgan');
 
-// DEFINE MODELS
+// Import Routes
+var UserRoute = require('./UserRoute');
+var CommentsRoute = require('./CommentsRoute');
+var BlogPostsRoute = require('./BlogPostsRoute');
 
+// DEFINE MODELS
 var BlogPost = mongoose.model('BlogPost', {
   id: Number,
   user_id: Number,
@@ -43,6 +47,9 @@ app.use(cors());
 app.use(morgan('combined'));
 
 // Routes
+app.use('/', BlogPostsRoute);
+app.use('/', CommentsRoute);
+app.use('/', UserRoute);
 
 app.listen(3000);
 console.log('API is running on port 3000!');

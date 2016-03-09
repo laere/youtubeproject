@@ -81,6 +81,6 @@ blogpostsRouter.route('/post/:user_id')
       });
   });
 
-app.use('/', blogpostsRouter);
+
 
 module.exports = BlogPostsRoute;

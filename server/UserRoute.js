@@ -79,6 +79,6 @@ userRouter.route('/post/:user_id')
       });
   });
 
-app.use('/', userRouter);
+
 
 module.exports = UserRoute;

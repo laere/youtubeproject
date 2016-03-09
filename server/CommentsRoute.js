@@ -79,6 +79,6 @@ commentsRouter.route('/post/:user_id')
       });
   });
 
-app.use('/', commentsRouter);
+
 
 module.exports = CommentsRoute;
