@@ -6,9 +6,21 @@ var cors = require('cors');
 var morgan = require('morgan');
 
 // Import Routes
-var UserRoute = require('./UserRoute');
-var CommentsRoute = require('./CommentsRoute');
-var BlogPostsRoute = require('./BlogPostsRoute');
+var UserRoute = require('./routes/UserRoute');
+var CommentsRoute = require('./routes/CommentsRoute');
+var BlogPostsRoute = require('./routes/BlogPostsRoute');
+
+// Mongo DB
+mongoose.connect('mongodb://localhost/blog');
+
+// Express
+var app = express();
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+app.use(cors());
+
+//Logging
+app.use(morgan('combined'));
 
 // DEFINE MODELS
 var BlogPost = mongoose.model('BlogPost', {
@@ -34,17 +46,15 @@ var User = mongoose.model('User', {
   password: String
 });
 
-// Mongo DB
-mongoose.connect('mongodb://localhost/blog');
+var Category = mongoose.model('Category', {
+  id: Number,
+  name: String
+});
 
-// Express
-var app = express();
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
-app.use(cors());
-
-//Logging
-app.use(morgan('combined'));
+var Tag = mongoose.model('Tag', {
+  id: Number,
+  name: String
+});
 
 // Routes
 app.use('/', BlogPostsRoute);
