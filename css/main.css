@@ -63,12 +63,13 @@ NAVBAR
   font-family: 'Ubuntu', 'Roboto', sans-serif;
 }
 
-.navbar a:hover {
+.navbar input:hover {
   color: #24B67F;
+  cursor: pointer;
 }
 
 .selected {
-  color: #24B67F;
+
   font-weight: 800;
   font-size: 2.85rem;
 }
@@ -83,13 +84,13 @@ MAIN CONTENT
   display: none;
 }
 
-.visible {
-  display: block;
-}
-
-.title {
-  font-size: 4rem;
-  margin-bottom: 40px;
+input[type=submit] {
+  font-size: 1.85rem;
+  margin: 0 8px;
+  margin-bottom: 32px;
+  color: #111;
+  border: none;
+  background-color: #fff;
 }
 
 .playerWrapper {
