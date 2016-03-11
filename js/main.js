@@ -13,6 +13,7 @@ window.onload = function() {
 
   grabMovies();
 
+
   function grabMovies() {
 
     movieIds.forEach(function(movie, index) {
@@ -21,12 +22,11 @@ window.onload = function() {
       var movieTitles = document.querySelector('#movieTitles');
       var titleButton = document.createElement('input');
       titleButton.setAttribute('type', 'submit');
-      titleButton.setAttribute('class', 'titleButtons');
       titleButton.setAttribute('id', movieIds[index].title);
       titleButton.setAttribute('value', movieIds[index].title);
       movieTitles.appendChild(titleButton);
 
-      // var currSelected = document.querySelector('input[type=submit].selected');
+      var currSelected = document.querySelector('input[type=submit].selected');
       // currSelected.classList.remove('selected');
       // titleButton.classList.add('selected');
 
@@ -57,6 +57,7 @@ window.onload = function() {
             video.innerHTML = videoData;
 
             info.innerHTML = movieIds[index].info;
+
           },
 
           //on error log data
