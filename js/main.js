@@ -11,7 +11,7 @@ window.onload = function() {
     {  id: 'Ymoh5SIqgtw', title: 'It Follows',  info: 'After carefree teenager Jay (Maika Monroe) sleeps with her new boyfriend, Hugh (Jake Weary), for the first time, she learns that she is the latest recipient of a fatal curse that is passed from victim to victim via sexual intercourse. Death, Jay learns, will creep inexorably toward her as either a friend or a stranger. Jays friends dont believe her seemingly paranoid ravings, until they too begin to see the phantom assassins and band together to help her flee or defend herself.' }
   ];
 
-  grabMovies();
+  grabMovies(fetchMovies(0));
 
   function grabMovies() {
     //for each object in the array
@@ -23,46 +23,43 @@ window.onload = function() {
       titleButton.setAttribute('type', 'submit');
       titleButton.setAttribute('id', movies[index].title);
       titleButton.setAttribute('value', movies[index].title);
-
-
       movieTitles.appendChild(titleButton);
 
-      //for each button add an event listener that grabs the data based on id
       titleButton.addEventListener('click', function() {
-
-        $.ajax({
-
-          type:'GET',
-
-          url: 'https://www.googleapis.com/youtube/v3/videos?part=snippet,player&id=' + movies[index].id + '&key=' + apiKey,
-
-          success: function(movie) {
-            console.log(movie);
-            console.log(movie.items[0].player.embedHtml);
-
-            var title = document.querySelector('.title');
-            var video = document.querySelector('#player');
-            var info = document.querySelector('.videoDescription');
-
-            var titleData = movie.items[0].snippet.title;
-            title.innerHTML = titleData;
-
-            var videoData = movie.items[0].player.embedHtml;
-            video.innerHTML = videoData;
-
-            info.innerHTML = movies[index].info;
-          },
-
-          error: function() {
-            console.log('error loading data');
-          }
-
-        });
-
+        fetchMovies(index);
       }, false);
-
     });
+  }
 
-  } 
+  function fetchMovies(index) {
+    $.ajax({
+      type:'GET',
+      url: 'https://www.googleapis.com/youtube/v3/videos',
+      data: {
+        id: movies[index].id,
+        key: apiKey,
+        part: 'snippet, player'
+      },
+      success: function(movie) {
+        console.log(movie);
+        console.log(movie.items[0].player.embedHtml);
+
+        var title = document.querySelector('.title');
+        var video = document.querySelector('#player');
+        var info = document.querySelector('.videoDescription');
+
+        var titleData = movie.items[0].snippet.title;
+        title.innerHTML = titleData;
+
+        var videoData = movie.items[0].player.embedHtml;
+        video.innerHTML = videoData;
+
+        info.innerHTML = movies[index].info;
+      },
+      error: function() {
+        console.log('error loading data');
+      }
+    });
+  }
 
 };
