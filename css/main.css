@@ -80,6 +80,7 @@ MAIN CONTENT
 
 .playerWrapper {
   margin-bottom: 64px;
+  position: relative;
 }
 
 .videoDescription {
@@ -89,7 +90,11 @@ MAIN CONTENT
 }
 
 iframe {
-
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 
 /*************************************************
