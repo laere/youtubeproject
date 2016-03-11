@@ -77,7 +77,6 @@ MAIN CONTENT
 .mainContent {
   text-align: center;
   position: relative;
-  overflow: hidden;
 }
 
 .videoDescription {
@@ -89,7 +88,9 @@ MAIN CONTENT
 iframe {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50;
+  width: 100%;
+  height: auto;
 }
 
 /*************************************************
@@ -99,7 +100,7 @@ MEDIA QUERIES
 
 }*/
 
-@media screen and (max-width: 896px) {
+@media screen and (max-width: 916px) {
   .navbar {
     padding: 16px;
   }
