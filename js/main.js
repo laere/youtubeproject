@@ -13,7 +13,6 @@ window.onload = function() {
 
   grabMovies();
 
-
   function grabMovies() {
 
     movieIds.forEach(function(movie, index) {
@@ -24,6 +23,8 @@ window.onload = function() {
       titleButton.setAttribute('type', 'submit');
       titleButton.setAttribute('id', movieIds[index].title);
       titleButton.setAttribute('value', movieIds[index].title);
+
+
       movieTitles.appendChild(titleButton);
 
       //for each button add an event listener that grabs the data based on movieId
@@ -38,6 +39,7 @@ window.onload = function() {
           //on success render data
           success: function(movie) {
             console.log(movie);
+            console.log(movie.items[0].player.embedHtml);
 
             //getters
             var title = document.querySelector('.title');
@@ -52,7 +54,6 @@ window.onload = function() {
             video.innerHTML = videoData;
 
             info.innerHTML = movieIds[index].info;
-
           },
 
           //on error log data
