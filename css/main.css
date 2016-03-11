@@ -76,10 +76,6 @@ MAIN CONTENT
 }
 .mainContent {
   text-align: center;
-}
-
-.playerWrapper {
-  margin-bottom: 64px;
   position: relative;
   overflow: hidden;
 }
@@ -90,11 +86,13 @@ MAIN CONTENT
   text-align: justify;
 }
 
-/*iframe {
+iframe {
   position: absolute;
   top: 0;
   left: 0;
-}*/
+  height: 100%;
+  width: 100%;
+}
 
 /*************************************************
 MEDIA QUERIES
