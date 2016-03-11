@@ -92,7 +92,7 @@ iframe {
   height: 100%;
 }
 
-.player {
+#player {
   margin-bottom: 56px;
   position: relative;
   padding-bottom: 56.25%;
