@@ -26,10 +26,6 @@ window.onload = function() {
       titleButton.setAttribute('value', movieIds[index].title);
       movieTitles.appendChild(titleButton);
 
-      var currSelected = document.querySelector('input[type=submit].selected');
-      // currSelected.classList.remove('selected');
-      // titleButton.classList.add('selected');
-
       //for each button add an event listener that grabs the data based on movieId
       titleButton.addEventListener('click', function() {
 
@@ -42,7 +38,6 @@ window.onload = function() {
           //on success render data
           success: function(movie) {
             console.log(movie);
-            console.log(movie.items[0].player.embedHtml);
 
             //getters
             var title = document.querySelector('.title');
