@@ -63,8 +63,9 @@ NAVBAR
   font-family: 'Ubuntu', 'Roboto', sans-serif;
 }
 
-.navbar a:hover {
+.navbar .titleButtons:hover {
   color: #24B67F;
+  cursor: pointer;
 }
 
 .selected {
@@ -80,16 +81,15 @@ MAIN CONTENT
 
 .mainContent {
   text-align: center;
-  display: none;
 }
 
-.visible {
-  display: block;
-}
-
-.title {
-  font-size: 4rem;
-  margin-bottom: 40px;
+.titleButtons {
+  font-size: 1.75rem;
+  border: none;
+  background-color: #fff;
+  color: #111;
+  padding: 0 16px;
+  margin-bottom: 32px;
 }
 
 .playerWrapper {

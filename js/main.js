@@ -21,11 +21,14 @@ window.onload = function() {
       var movieTitles = document.querySelector('#movieTitles');
       var titleButton = document.createElement('input');
       titleButton.setAttribute('type', 'submit');
+      titleButton.setAttribute('class', 'titleButtons');
       titleButton.setAttribute('id', movieIds[index].title);
       titleButton.setAttribute('value', movieIds[index].title);
-
-
       movieTitles.appendChild(titleButton);
+
+      // var currSelected = document.querySelector('input[type=submit].selected');
+      // currSelected.classList.remove('selected');
+      // titleButton.classList.add('selected');
 
       //for each button add an event listener that grabs the data based on movieId
       titleButton.addEventListener('click', function() {
