@@ -47,7 +47,7 @@ window.onload = function() {
 
             //setters
             //title data
-            var titleData = document.createTextNode(movie.items[0].snippet.title);
+            var titleData = movie.items[0].snippet.title;
             title.innerHTML = titleData;
             //video data
             var videoData = movie.items[0].player.embedHtml;
