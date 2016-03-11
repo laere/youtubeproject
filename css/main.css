@@ -37,11 +37,9 @@ CONTAINER
 
 .container {
   max-width: 940px;
-  height: 100vh;
   background-color: white;
   margin: 0 auto;
   padding: 32px;
-
 }
 
 /*************************************************
@@ -62,8 +60,6 @@ input[type=submit] {
   color: #111;
   font-size: 1.75rem;
   margin: 0 16px 32px;
-
-
 }
 
 input[type=submit]:hover {
@@ -75,19 +71,15 @@ input[type=submit]:hover {
 /*************************************************
 MAIN CONTENT
 *************************************************/
-
+.title {
+  margin-bottom: 32px;
+}
 .mainContent {
   text-align: center;
-  height: auto;
 }
 
 .playerWrapper {
-  margin-bottom: 56px;
-  position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 35px;
-  height: 0;
-  overflow: hidden;
+  margin-bottom: 64px;
 }
 
 .videoDescription {
@@ -96,23 +88,16 @@ MAIN CONTENT
   text-align: justify;
 }
 
-/*iframe {
-  position: absolute;
-  top:0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}*/
+iframe {
+
+}
 
 /*************************************************
 MEDIA QUERIES
 *************************************************/
-@media screen and (max-width: 420px) {
+/*@media screen and (max-width: 420px) {
 
-  .videoDescription {
-    font-size: 1.75rem;
-  }
-}
+}*/
 
 @media screen and (max-width: 896px) {
   .navbar {
