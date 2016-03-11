@@ -1,35 +1,69 @@
 
-$(document).ready(function() {
+window.onload = function() {
 
-  var $title = $('a');
-  var $iframe =$('iframe');
+  // var $title = $('a');
+  // var $iframe =$('iframe');
+  var apiKey = 'AIzaSyAtPZ-URREb3HXrvbPRot04a8PG2p8laTg';
+  var movieIds = [
+  {  movieId: 'sGbxmsDFVnE', title: 'Star Wars The Force Awakens' },
+  {  movieId: 'LhCKXJNGzN8', title: 'The Mist' } ,
+  {  movieId: 's7EdQ4FqbhY', title: 'Pulp Fiction'},
+  {  movieId: 'vntAEVjPBzQ', title: 'Ghostbusters'},
+  {  movieId: 'Ymoh5SIqgtw', title: 'It Follows'}
+];
 
-  $title.click(function() {
-    //hide all content other than one with visible class
-    $('div.mainContent').hide();
-    //currently selected title
-    var currTitle = $('a.selected');
-    // remove class from curr target
-    currTitle.removeClass('selected');
-    // add class to target clicked
-    $(this).addClass('selected');
-    //show movie based on href attribute (which is an id of the title of the movie)
-    $(this.getAttribute('href')).fadeIn(500);
+  grabMovies();
 
-    stopVideoOnSwitch();
+  function grabMovies() {
 
-  });
+    movieIds.forEach(function(movie, index) {
 
-  function stopVideoOnSwitch() {
-    //for each iframe element
-    $iframe.each(function() {
-      //use the post message api to message the youtube api and retrieve the stopVideo func.
-      $(this)[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
-      console.log($(this)[0]);
+      //dynamically create a button for each title, and give it an id.
+      var movieTitles = document.querySelector('#movieTitles');
+      var titleButton = document.createElement('input');
+      titleButton.setAttribute('type', 'submit');
+      titleButton.setAttribute('id', movieIds[index].title);
+      titleButton.setAttribute('value', movieIds[index].title);
+      movieTitles.appendChild(titleButton);
+
+      //for each button add an event listener that grabs the data based on movieId
+      titleButton.addEventListener('click', function() {
+
+        $.ajax({
+
+          type:'GET',
+
+          url: 'https://www.googleapis.com/youtube/v3/videos?part=snippet,player&id=' + movieIds[index].movieId + '&key=' + apiKey,
+
+          success: function(movie) {
+            console.log(movie);
+            console.log(movie.items[0].player.embedHtml);
+
+            //getters
+            var title = document.querySelector('.title');
+            var video = document.querySelector('#player');
+            var info = document.querySelector('.videoDescription');
+
+            //setters
+            var titleData = document.createTextNode(movie.items[0].snippet.title);
+            title.appendChild(titleData);
+
+            var videoData = movie.items[0].player.embedHtml;
+
+            video.innerHTML = videoData;
+
+          },
+
+          error: function() {
+            console.log('error loading data');
+          }
+
+        });
+      }, false);
+
+      //render the received data to the correct elements.
+
+
     });
-
   }
-
-
-
-});
+};

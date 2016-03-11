@@ -21,12 +21,12 @@
         <header>
             <nav class="navbar" id="nav" role="navigation">
                 <div>
-                    <ul>
-                        <a href="#starwars" class="selected"><li>Star Wars<br>The Force Awakens</li></a>
+                    <ul id="movieTitles">
+                        <!-- <a href="#starwars" class="selected"><li>Star Wars<br>The Force Awakens</li></a>
                         <a href="#mist"><li>The Mist</li></a>
                         <a href="#pulp"><li>Pulp Fiction</li></a>
                         <a href="#ghostbusters"><li>Ghostbusters</li></a>
-                        <a href="#itfollows"><li>It Follows</li></a>
+                        <a href="#itfollows"><li>It Follows</li></a> -->
                     </ul>
                 </div>
             </nav>
@@ -35,109 +35,23 @@
 
         <!-- MAIN CONTENT START -->
         <main role="main">
-            <div class="mainContent visible" id="starwars">
 
-                <h1 class="title">Star Wars: The Force Awakens</h1>
+                <div class="mainContent visible" id="starwars">
 
-                <div class="playerWrapper">
-                    <iframe id="player"
-                    type="text/html"
-                    width="640"
-                    height="390"
-                    align="center"
-                    allowfullscreen="true"
-                    src="https://www.youtube.com/embed/sGbxmsDFVnE?enablejsapi=1&version=3&playerapiid=ytplayer"
-                    frameborder="0">
-                </iframe>
-            </div>
-            
-            <p class="videoDescription">Thirty years after the defeat of the Galactic Empire, the galaxy faces a new threat from the evil Kylo Ren (Adam Driver) and the First Order. When a defector named Finn crash-lands on a desert planet, he meets Rey (Daisy Ridley), a tough scavenger whose droid contains a top-secret map. Together, the young duo joins forces with Han Solo (Harrison Ford) to make sure the Resistance receives the intelligence concerning the whereabouts of Luke Skywalker (Mark Hamill), the last of the Jedi Knights.</p>
+                    <h1 class="title"></h1>
 
-        </div>
-        <div class="mainContent" id="mist">
+                    <div id="player"></div>
 
-            <h1 class="title">The Mist</h1>
+                    <p class="videoDescription">.</p>
 
-            <div class="playerWrapper">
-                <iframe id="player"
-                    type="text/html"
-                    width="640"
-                    height="390"
-                    align="center"
-                    allowfullscreen="true"
-                    src="https://www.youtube.com/embed/LhCKXJNGzN8?enablejsapi=1&version=3&playerapiid=ytplayer"
-                    frameborder="0">
-                </iframe>
-            </div>
+                </div>
 
-            <p class="videoDescription">After a powerful storm damages their Maine home, David Drayton (Thomas Jane) and his young son head into town to gather food and supplies. Soon afterward, a thick fog rolls in and engulfs the town, trapping the Draytons and others in the grocery store. Terror mounts as deadly creatures reveal themselves outside, but that may be nothing compared to the threat within, where a zealot (Marcia Gay Harden) calls for a sacrifice.</p>
-
-       </div>
-
-    <div class="mainContent" id="pulp">
-
-        <h1 class="title">Pulp Fiction</h1>
-
-        <div class="playerWrapper">
-            <iframe id="player"
-                type="text/html"
-                width="640"
-                height="390"
-                align="center"
-                allowfullscreen="true"
-                src="https://www.youtube.com/embed/s7EdQ4FqbhY?enablejsapi=1&version=3&playerapiid=ytplayer"
-                frameborder="0">
-            </iframe>
-        </div>
-
-        <p class="videoDescription">Vincent Vega (John Travolta) and Jules Winnfield (Samuel L. Jackson) are hitmen with a penchant for philosophical discussions. In this ultra-hip, multi-strand crime movie, their storyline is interwoven with those of their boss, gangster Marsellus Wallace (Ving Rhames) ; his actress wife, Mia (Uma Thurman) ; struggling boxer Butch Coolidge (Bruce Willis) ; master fixer Winston Wolfe (Harvey Keitel) and a nervous pair of armed robbers, "Pumpkin" (Tim Roth) and "Honey Bunny" (Amanda Plummer).</p>
-
-    </div>
-
-    <div class="mainContent" id="ghostbusters">
-
-        <h1 class="title">Ghostbusters</h1>
-
-        <div class="playerWrapper">
-            <iframe id="player"
-                type="text/html"
-                width="640"
-                height="390"
-                align="center"
-                allowfullscreen="true"
-                src="https://www.youtube.com/embed/teGxHLo9Qcc?enablejsapi=1&version=3&playerapiid=ytplayer"
-                frameborder="0">
-            </iframe>
-        </div>
-
-        <p class="videoDescription">Three odd-ball scientists get kicked out of their cushy positions at a university in New York City where they studied the occult. They decide to set up shop in an old firehouse and become Ghostbusters, trapping pesky ghosts, spirits, haunts, and poltergeists for money. They wise-crack their way through the city, and stumble upon a gateway to another dimension, one which will release untold evil upon the city. The Ghostbusters are called on to save the Big Apple.</p>
-
-    </div>
-
-    <div class="mainContent" id="itfollows">
-
-        <h1 class="title">It Follows</h1>
-
-        <div class="playerWrapper">
-            <iframe id="player"
-                type="text/html"
-                width="640"
-                height="390"
-                align="center"
-                allowfullscreen="true"
-                src="https://www.youtube.com/embed/Ymoh5SIqgtw?enablejsapi=1&version=3&playerapiid=ytplayer"
-                frameborder="0">
-            </iframe>
-        </div>
-
-        <p class="videoDescription">After carefree teenager Jay (Maika Monroe) sleeps with her new boyfriend, Hugh (Jake Weary), for the first time, she learns that she is the latest recipient of a fatal curse that is passed from victim to victim via sexual intercourse. Death, Jay learns, will creep inexorably toward her as either a friend or a stranger. Jay's friends don't believe her seemingly paranoid ravings, until they too begin to see the phantom assassins and band together to help her flee or defend herself.</p>
-
-    </div>
-</main>
-<!-- MAIN CONTENT END -->
+        </main>
+    <!-- MAIN CONTENT END -->
 
 </div>
 <!-- CONTAINER END -->
+<script src="https://www.youtube.com/iframe_api"></script>
 <script src="js/jquery-2.2.1.min.js"></script>
 <script src="js/main.js" defer></script>
 </body>
