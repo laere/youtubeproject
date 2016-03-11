@@ -90,11 +90,11 @@ MAIN CONTENT
   text-align: justify;
 }
 
-iframe {
+/*iframe {
   position: absolute;
   top: 0;
   left: 0;
-}
+}*/
 
 /*************************************************
 MEDIA QUERIES
