@@ -36,7 +36,6 @@ window.onload = function() {
 
           url: 'https://www.googleapis.com/youtube/v3/videos?part=snippet,player&id=' + movies[index].id + '&key=' + apiKey,
 
-          //on success render data
           success: function(movie) {
             console.log(movie);
             console.log(movie.items[0].player.embedHtml);
@@ -45,27 +44,25 @@ window.onload = function() {
             var video = document.querySelector('#player');
             var info = document.querySelector('.videoDescription');
 
-            //title data
             var titleData = movie.items[0].snippet.title;
             title.innerHTML = titleData;
-            //video data
+
             var videoData = movie.items[0].player.embedHtml;
             video.innerHTML = videoData;
 
             info.innerHTML = movies[index].info;
           },
 
-          //on error log data
           error: function() {
             console.log('error loading data');
           }
 
-        }); //end of ajax call
+        });
 
-      }, false); //end of event listener
+      }, false);
 
-    }); //end of forEach
+    });
 
-  } //end of grabMovies
+  } 
 
 };
