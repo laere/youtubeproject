@@ -76,7 +76,6 @@ MAIN CONTENT
 }
 .mainContent {
   text-align: center;
-  position: relative;
 }
 
 .videoDescription {
@@ -85,13 +84,13 @@ MAIN CONTENT
   text-align: justify;
 }
 
-iframe {
+/*iframe {
   position: absolute;
   top: 0;
   left: 50;
   width: 100%;
   height: auto;
-}
+}*/
 
 /*************************************************
 MEDIA QUERIES
