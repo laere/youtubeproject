@@ -1,4 +1,3 @@
-
 window.onload = function() {
 
   var apiKey = 'AIzaSyAtPZ-URREb3HXrvbPRot04a8PG2p8laTg';
@@ -11,32 +10,32 @@ window.onload = function() {
     {  id: 'Ymoh5SIqgtw', title: 'It Follows',  info: 'After carefree teenager Jay (Maika Monroe) sleeps with her new boyfriend, Hugh (Jake Weary), for the first time, she learns that she is the latest recipient of a fatal curse that is passed from victim to victim via sexual intercourse. Death, Jay learns, will creep inexorably toward her as either a friend or a stranger. Jays friends dont believe her seemingly paranoid ravings, until they too begin to see the phantom assassins and band together to help her flee or defend herself.' }
   ];
 
-  grabMovies(fetchMovies(0));
+  grabMovies(fetchMovies(movies[0].id, movies[0].info));
 
   function grabMovies() {
     //for each object in the array
-    movies.forEach(function(movie, index) {
+    movies.forEach(function(movie) {
 
       //dynamically create a button for each title, and give it an id.
       var movieTitles = document.querySelector('#movieTitles');
       var titleButton = document.createElement('input');
       titleButton.setAttribute('type', 'submit');
-      titleButton.setAttribute('id', movies[index].title);
-      titleButton.setAttribute('value', movies[index].title);
+      titleButton.setAttribute('id', movie.title);
+      titleButton.setAttribute('value', movie.title);
       movieTitles.appendChild(titleButton);
 
       titleButton.addEventListener('click', function() {
-        fetchMovies(index);
+        fetchMovies(movie.id, movie.info);
       }, false);
     });
   }
 
-  function fetchMovies(index) {
+  function fetchMovies(id, desc) {
     $.ajax({
       type:'GET',
       url: 'https://www.googleapis.com/youtube/v3/videos',
       data: {
-        id: movies[index].id,
+        id: id,
         key: apiKey,
         part: 'snippet, player'
       },
@@ -54,7 +53,8 @@ window.onload = function() {
         var videoData = movie.items[0].player.embedHtml;
         video.innerHTML = videoData;
 
-        info.innerHTML = movies[index].info;
+        // if no description passed, use youtube's description
+        info.innerHTML = desc ? desc : movie.items[0].snippet.description;
       },
       error: function() {
         console.log('error loading data');
