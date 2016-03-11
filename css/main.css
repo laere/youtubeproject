@@ -84,13 +84,22 @@ MAIN CONTENT
   text-align: justify;
 }
 
-/*iframe {
+iframe {
   position: absolute;
-  top: 0;
-  left: 50;
+  top:0;
+  left: 0;
   width: 100%;
-  height: auto;
-}*/
+  height: 100%;
+}
+
+.player {
+  margin-bottom: 56px;
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 35px;
+  height: 0;
+  overflow: hidden;
+}
 
 /*************************************************
 MEDIA QUERIES
